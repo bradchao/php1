@@ -1,7 +1,8 @@
 <?php
     include_once 'bradutils.php';
 
-    $twid = 'X123456789';
+    $twid = createTWId(false);
+    echo $twid . '<br>';
     if (isTWId($twid)){
         echo 'OK';
     }else{
