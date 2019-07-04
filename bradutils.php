@@ -1,4 +1,22 @@
 <?php
+class WebInfo {
+    public $var1;
+}
+class Student {
+    private $ch, $eng, $math;
+    public function __construct($ch, $eng, $math){
+        $this->ch = $ch;
+        $this->eng = $eng;
+        $this->math = $math;
+    }
+    public function sum(){
+        return $this->ch + $this->eng + $this->math;
+    }
+    public function avg(){
+        return $this->sum() / 3;
+    }
+    public function setCh($newch){$this->ch = $newch; }
+}
 function isTWId($id) : bool {
     // 1. pre check
     // length, A, 1/2, 3-10 => 0~9

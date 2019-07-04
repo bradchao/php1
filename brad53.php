@@ -33,6 +33,10 @@ class person {
         $this->myScooter = new Scooter;
         $this->myName = $name;
     }
+
+    function __destruct(){
+        
+    }
 }
 
 $b1 = new Bike;
