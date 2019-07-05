@@ -20,10 +20,12 @@
         $stmt->execute();
     }
 
-
+    $page = isset($_GET['page'])?$_GET['page']:1;
+    $rpp = 8;   // row per page
+    $start = ($page-1) * $rpp;
 
     // select * from product
-    $sql = 'select * from product';
+    $sql = "select * from product limit {$start},{$rpp}";
     $result = $mysqli->query($sql);
 ?>
 
@@ -46,7 +48,7 @@
         while ( $product = $result->fetch_object()){
             echo '<tr>';
             echo "<td>{$product->id}</td>";
-            echo "<td>{$product->pname}</td>";
+            echo "<td><a href='showPImage.php?id={$product->id}'>{$product->pname}</a></td>";
             echo "<td>{$product->price}</td>";
             echo "<td>";
             echo "<a href='editProduct.php?editid={$product->id}'>Edit</a> | ";
