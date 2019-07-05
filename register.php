@@ -17,8 +17,8 @@
               "('{$account}','{$passwd}','{$realname}','{$icon}')";
 
         if ($mysqli->query($sql)){
-            //header('Location: ');
-            echo 'OK';
+            header('Location: login.php');
+            //echo 'OK';
         }else{
             echo 'ERROR:' . $sql;
         }
